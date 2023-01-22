@@ -49,6 +49,7 @@ export function NoteForm({
           <Col>
             <Form.Group controlId="tags">
               <Form.Label>Tags</Form.Label>
+              {/* find a way to make tag background colors change based on user color choices */}
               <CreatableReactSelect
                 onCreateOption={(label) => {
                   const newTag = { id: uuidV4(), label };

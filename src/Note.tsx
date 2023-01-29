@@ -57,8 +57,20 @@ export function Note({ onDelete }: NoteProps) {
             >
               <FiDownload />
             </Button>
-            {/* TODO: add a share feature to email the document to someone */}
-            <Button variant="outline-success">
+            <Button
+              onClick={() => {
+                const file = new Blob([note.markdown], {
+                  type: "text/markdown",
+                });
+                const noteFile = new File([file], `${note.title}.md`, {
+                  type: "text/markdown",
+                });
+                // BUG: fix email not attaching file to message body
+                window.location.href = `mailto:?subject=${note.title}&attachment=${noteFile}`;
+              }}
+              variant="outline-success"
+            >
+              {/* TODO: change icon to a better share icon possibly */}
               <FiShare />
             </Button>
             <Button

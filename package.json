@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cnakazawa/copy-as-markdown": "^2.0.0",
     "bootstrap": "^5.2.1",
     "react": "^18.0.0",
     "react-bootstrap": "^2.5.0",
